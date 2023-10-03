@@ -33,6 +33,7 @@ public class BaiTap {
         double diemTBHS = student1List.stream().map(Student1::getDtb).reduce(0.0, Double::sum) / (double) student1List.size();
         double diemTBHSNam = student1List.stream().filter(Student1::isGender).map(Student1::getDtb).reduce(0.0, Double::sum) / (double) soluongHSNam;
         double diemTBHSNu = student1List.stream().filter(e->!e.isGender()).map(Student1::getDtb).reduce(0.0, Double::sum) / (double) soluongHSNu;
+        int totalOfAge = student1List.stream().map(Student1::getAge).reduce(0,Integer::sum);
         System.out.println("Các học sinh có DTB > 5 và < 6.5 là :");
         System.out.println(list);
         System.out.println("Số lượng học sinh nam là : ");
@@ -49,6 +50,8 @@ public class BaiTap {
         System.out.println(diemTBHSNam);
         System.out.println("Điểm trung bình của toàn bộ học sinh nữ là :");
         System.out.println(diemTBHSNu);
+        System.out.println("Tổng số tuổi của các học sinh là :");
+        System.out.println(totalOfAge);
 
     }
 
